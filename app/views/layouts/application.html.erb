@@ -6,8 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class <%= params[:action] %>
 
+<nav>
+     <li><%= link_to('Home', root_path, class: 'nav-link') %></li> 
+     <li><%= link_to('About Me', about_me_path, class: 'nav-link') %></li> 
+     <li><%= link_to('Interests', interests_path, class: 'nav-link') %></li>
+     <li><%= link_to('Work Experience', work_experience_path, class: 'nav-link') %></li>
+     <li><%= link_to('Contact', contact_path, class: 'nav-link') %></li>
+   
+   </nav>
 <%= yield %>
 
 </body>
